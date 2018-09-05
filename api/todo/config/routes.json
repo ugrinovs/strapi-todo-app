@@ -6,6 +6,7 @@
       "handler": "Todo.find",
       "config": {
         "policies": [
+          "global.filterUserItems"
         ]
       }
     },
@@ -14,9 +15,7 @@
       "path": "/todo/count",
       "handler": "Todo.count",
       "config": {
-        "policies": [
-          "global.itemBelongsToUser"
-        ]
+        "policies": []
       }
     },
     {
@@ -34,7 +33,9 @@
       "path": "/todo",
       "handler": "Todo.create",
       "config": {
-        "policies": []
+        "policies": [
+          "global.itemBelongsToUser"
+        ]
       }
     },
     {
@@ -42,7 +43,9 @@
       "path": "/todo/:_id",
       "handler": "Todo.update",
       "config": {
-        "policies": []
+        "policies": [
+          "global.itemBelongsToUser"
+        ]
       }
     },
     {
@@ -50,7 +53,9 @@
       "path": "/todo/:_id",
       "handler": "Todo.destroy",
       "config": {
-        "policies": []
+        "policies": [
+          "global.itemBelongsToUser"
+        ]
       }
     }
   ]
