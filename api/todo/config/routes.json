@@ -1,0 +1,57 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/todo",
+      "handler": "Todo.find",
+      "config": {
+        "policies": [
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/todo/count",
+      "handler": "Todo.count",
+      "config": {
+        "policies": [
+          "global.itemBelongsToUser"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/todo/:_id",
+      "handler": "Todo.findOne",
+      "config": {
+        "policies": [
+          "global.itemBelongsToUser"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/todo",
+      "handler": "Todo.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/todo/:_id",
+      "handler": "Todo.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/todo/:_id",
+      "handler": "Todo.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

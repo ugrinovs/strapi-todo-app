@@ -1,0 +1,11 @@
+{
+  "gzip": {
+    "enabled": false
+  },
+  "responseTime": {
+    "enabled": false
+  },
+  "filter": {
+    "enabled": true
+  }
+}

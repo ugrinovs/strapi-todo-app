@@ -1,0 +1,5 @@
+{
+  "verbose": true,
+  "ignore": ["plugins/**/config/**/*.json", "admin/**/config/*.json", "admin/admin/build/*"],
+  "watch": ["api/*", "admin/*", "config/*", "middlewares/*", "plugins/*"]
+}
