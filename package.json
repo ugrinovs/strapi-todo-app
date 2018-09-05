@@ -1,5 +1,5 @@
 {
-  "name": "todos3",
+  "name": "todos-strapi",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application.",
@@ -26,7 +26,7 @@
   },
   "author": {
     "name": "stefanugrinov",
-    "email": "",
+    "email": "fiste_94@hotmail.com",
     "url": ""
   },
   "maintainers": [
