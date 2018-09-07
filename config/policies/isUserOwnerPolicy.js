@@ -9,18 +9,23 @@
  */
 module.exports = async (ctx, next) => {
   
-  await next();
-  
   const user = ctx.state.user;
+
+  const isNotPermitted = ctx.query.user && ctx.query.user !== user.id;
+
+  if (isNotPermitted) {
+    ctx.forbidden('You are not permitted to view these items');
+  }
+
   if (user.role.name === 'Administrator') {
     return;
   }
+  
+  ctx.query = {
+    user: user.id,
+    ...ctx.query
+  };
 
-  const currentUserId = user._id.toString();
-  ctx.body = ctx.body.filter(filterByUser(currentUserId));
+  await next();
 };
-
-function filterByUser(currentUserId) {
-  return item => item.user && item.user._id.toString() === currentUserId;
-}
 
