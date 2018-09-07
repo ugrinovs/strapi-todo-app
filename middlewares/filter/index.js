@@ -10,8 +10,15 @@ module.exports = strapi => {
       strapi.app.use(async (ctx, next) => {
         await next();
 
-        // console.log('ctx req', ctx);
-        // console.log('ctx res', ctx.body);
+        // example of middle
+        // it will needs to be structured as ./middlewares/<middlewareName>/index.js
+        // to enable it you should enable it in ./config/environments/**
+        // {
+        //    "filter": {
+        //      "enabled": true 
+        //    }
+        // }
+
       });
 
       cb();

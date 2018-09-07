@@ -15,10 +15,7 @@ module.exports = {
 
   // Before fetching all values.
   // Fired before a `fetchAll` operation.
-  // beforeFetchAll: async (model) => {
-  //   console.log('test');
-  //   console.log('before fetch', model);
-  // },
+  // beforeFetchAll: async (model) => {},
 
   // After fetching all values.
   // Fired after a `fetchAll` operation.
