@@ -22,5 +22,8 @@
   },
   "router": {
     "prefix": ""
+  },
+  "pagination": {
+    "enabled": true
   }
 }
