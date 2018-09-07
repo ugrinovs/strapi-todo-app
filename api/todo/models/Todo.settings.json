@@ -12,7 +12,6 @@
     "text": {
       "default": "",
       "maxlength": 15,
-      "maxLength": 15,
       "type": "string",
       "required": true
     },
