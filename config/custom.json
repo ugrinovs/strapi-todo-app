@@ -1,3 +1,8 @@
 {
-  "myCustomConfiguration": "This configuration is accessible through strapi.config.myCustomConfiguration"
+  "myCustomConfiguration": "This configuration is accessible through strapi.config.myCustomConfiguration",
+  "hook": {
+    "validation": {
+      "enabled": true
+    }
+  }
 }

@@ -11,6 +11,7 @@
   "attributes": {
     "text": {
       "default": "",
+      "maxlength": 15,
       "type": "string",
       "required": true
     },
