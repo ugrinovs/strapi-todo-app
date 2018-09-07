@@ -8,6 +8,7 @@
 
 // Public dependencies.
 const _ = require('lodash');
+const AsyncErrorHandler = require('../../../services/AsyncErrorHandler');
 
 module.exports = {
 
@@ -96,9 +97,9 @@ module.exports = {
     // Extract values related to relational data.
     const relations = _.pick(values, Todo.associations.map(a => a.alias));
     const data = _.omit(values, Todo.associations.map(a => a.alias));
-
     // Update entry with no-relational data.
-    const entry = await Todo.update(params, data, { multi: true });
+
+    await AsyncErrorHandler(Todo.update(params, data, { multi: true, runValidators: true }), 406);
 
     // Update relational data and return the entry.
     return Todo.updateRelations(Object.assign(params, { values: relations }));
