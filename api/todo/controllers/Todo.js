@@ -53,7 +53,7 @@ module.exports = {
    */
 
   create: async (ctx) => {
-    return strapi.services.todo.add(ctx.request.body);
+    return strapi.services.todo.add(ctx.request.body, ctx.state.user);
   },
 
   /**

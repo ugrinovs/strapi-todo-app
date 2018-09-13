@@ -75,10 +75,10 @@ module.exports = {
    * @return {Promise}
    */
 
-  add: async (values) => {
+  add: async (values, currentUser) => {
     // Extract values related to relational data.
     const relations = _.pick(values, Todo.associations.map(ast => ast.alias));
-    const data = _.omit(values, Todo.associations.map(ast => ast.alias));
+    const data = { ..._.omit(values, Todo.associations.map(ast => ast.alias)), user: currentUser };
 
     // Create entry with no-relational data.
     const entry = await Todo.create(data);

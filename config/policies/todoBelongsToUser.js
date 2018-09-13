@@ -15,9 +15,9 @@ module.exports = async (ctx, next) => {
   const paramId = ctx.params._id;
   const todoBelongsToUser = user.todos.find(findByTodoId(paramId));
 
-  const hasTodo = ctx.request.body.user._id && user._id.equals(ctx.request.body.user._id);
+  const hasTodo = ctx.request.body.user && user._id.equals(ctx.request.body.user._id);
 
-  if (todoBelongsToUser || hasTodo) {
+  if (todoBelongsToUser || hasTodo || ctx.method === 'POST') {
     return await next();
   }
   

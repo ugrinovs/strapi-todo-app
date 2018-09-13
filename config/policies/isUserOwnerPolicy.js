@@ -11,18 +11,17 @@ module.exports = async (ctx, next) => {
   
   const user = ctx.state.user;
 
+  if (user.role.name === 'Administrator') {
+    return await next();
+  }
+  
   const isNotPermitted = ctx.query.user && ctx.query.user !== user.id;
-
   if (isNotPermitted) {
     ctx.forbidden('You are not permitted to view these items');
   }
-
-  if (user.role.name === 'Administrator') {
-    return;
-  }
   
   ctx.query = {
-    user: user.id,
+    user: user._id.toString(),
     ...ctx.query
   };
 
