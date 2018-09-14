@@ -21,10 +21,11 @@
 
 ### Debugging with VSCode
 - Debugging can be done easily with VSCode by creating a launch.json configuration(Debug > Add Configuration) and selecting Node.js: Run Program. Just make sure that “program” points to server.js. 
-  VSCode Debugger + Auto reload
-- Since strapi currently doesn’t support auto reload, if you want to have a debugger with it you should use nodemon (when installed just change start script in package.json to use nodemon instead of node). Make sure to make a nodemon.json file in project root and add an ignore option similar to this: "ignore": ["**/config/*.json”] in order to avoid endless auto reload when starting nodemon (due to constant file changes in strapi code)
-- After you’ve set up nodemon you can then ‘Add Configuration’ for ‘Node.js: Nodemon setup’, make sure you specify which file to run (should be server.js in root folder if it was not renamed) 
-- If you haven’t saved nodemon globally but as a dev dependency then you should change runtimeExecutable to point to that executable (“${workspaceFolder}/node_modules/.bin/nodemon”)
+
+  #### VSCode Debugger + Auto reload
+  - Since strapi currently doesn’t support auto reload, if you want to have a debugger with it you should use nodemon (when installed just change start script in package.json to use nodemon instead of node). Make sure to make a nodemon.json file in project root and add an ignore option similar to this: "ignore": ["**/config/*.json”] in order to avoid endless auto reload when starting nodemon (due to constant file changes in strapi code)
+  - After you’ve set up nodemon you can then ‘Add Configuration’ for ‘Node.js: Nodemon setup’, make sure you specify which file to run (should be server.js in root folder if it was not renamed) 
+  - If you haven’t saved nodemon globally but as a dev dependency then you should change runtimeExecutable to point to that executable (“${workspaceFolder}/node_modules/.bin/nodemon”)
 
 ### Notices
 - Policies are used for per route actions
