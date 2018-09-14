@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Example of middleware see Koa for more info (https://koajs.com)
+ * Example of middleware. See Koa for more info (https://koajs.com)
  * @param {Strapi} strapi object containing whole app config. See (https://strapi.io/documentation/api-reference/reference.html)
  */
 module.exports = strapi => {
@@ -10,9 +10,9 @@ module.exports = strapi => {
       strapi.app.use(async (ctx, next) => {
         await next();
 
-        // example of middle
-        // it will needs to be structured as ./middlewares/<middlewareName>/index.js
-        // to enable it you should enable it in ./config/environments/**
+        // Example of middleware.
+        // It needs to be structured as ./middlewares/<middlewareName>/index.js
+        // To enable it you should go to ./config/environments/** and add next lines:
         // {
         //    "filter": {
         //      "enabled": true 

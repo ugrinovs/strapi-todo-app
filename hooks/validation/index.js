@@ -19,7 +19,7 @@ module.exports = strapi => {
     initialize: cb => {
     
       // a hook example
-      // it's enabled by adding 
+      // it's enabled by adding next lines in ./custom.json
       // "hook": {
       //   "validation": {
       //     "enabled": true
